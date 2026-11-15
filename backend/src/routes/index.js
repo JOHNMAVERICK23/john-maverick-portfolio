@@ -33,4 +33,6 @@ router.post('/contact', contactLimiter, [
     .withMessage('Message must be 10 to 5000 characters'),
 ], validate, c.createMessage);
 
+router.use('/auth', require('./authRoutes'));
+
 module.exports = router;

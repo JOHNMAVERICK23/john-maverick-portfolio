@@ -3,3 +3,4 @@ node_modules
 backend/uploads/*
 dist
 !backend/uploads/.gitkeep
+jar.txt
