@@ -35,4 +35,6 @@ router.post('/contact', contactLimiter, [
 
 router.use('/auth', require('./authRoutes'));
 
+router.use('/admin', require('../middleware/auth'), require('./adminRoutes'));
+
 module.exports = router;
