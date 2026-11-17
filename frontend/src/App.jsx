@@ -9,9 +9,10 @@ import Skills from './pages/admin/Skills'
 import Experience from './pages/admin/Experience'
 import Certificates from './pages/admin/Certificates'
 import Education from './pages/admin/Education'
-import ComingSoon from './pages/admin/ComingSoon'
+import Profile from './pages/admin/Profile'
+import About from './pages/admin/About'
+import Settings from './pages/admin/Settings'
 
-const pending = ['profile', 'about', 'settings']
 
 export default function App() {
   return (
@@ -28,7 +29,9 @@ export default function App() {
 <Route path="experience" element={<Experience />} />
 <Route path="certificates" element={<Certificates />} />
 <Route path="education" element={<Education />} />
-          {pending.map((p) => <Route key={p} path={p} element={<ComingSoon title={p} />} />)}
+<Route path="profile" element={<Profile />} />
+<Route path="about" element={<About />} />
+<Route path="settings" element={<Settings />} />
         </Route>
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
