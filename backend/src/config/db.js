@@ -1,5 +1,6 @@
 require('dotenv').config();
-const { Pool } = require('pg');
+const { Pool, types } = require('pg');
+types.setTypeParser(1082, (v) => v); // keep DATE as YYYY-MM-DD
 
 module.exports = new Pool({
   host: process.env.DB_HOST,

@@ -5,9 +5,13 @@ import Login from './pages/admin/Login'
 import Dashboard from './pages/admin/Dashboard'
 import Messages from './pages/admin/Messages'
 import Projects from './pages/admin/Projects'
+import Skills from './pages/admin/Skills'
+import Experience from './pages/admin/Experience'
+import Certificates from './pages/admin/Certificates'
+import Education from './pages/admin/Education'
 import ComingSoon from './pages/admin/ComingSoon'
 
-const pending = ['profile', 'about', 'skills', 'experience', 'certificates', 'education', 'settings']
+const pending = ['profile', 'about', 'settings']
 
 export default function App() {
   return (
@@ -20,6 +24,10 @@ export default function App() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="messages" element={<Messages />} />
           <Route path="projects" element={<Projects />} />
+<Route path="skills" element={<Skills />} />
+<Route path="experience" element={<Experience />} />
+<Route path="certificates" element={<Certificates />} />
+<Route path="education" element={<Education />} />
           {pending.map((p) => <Route key={p} path={p} element={<ComingSoon title={p} />} />)}
         </Route>
       </Route>
