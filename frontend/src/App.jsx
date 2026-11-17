@@ -3,10 +3,11 @@ import ProtectedRoute from './routes/ProtectedRoute'
 import AdminLayout from './layouts/AdminLayout'
 import Login from './pages/admin/Login'
 import Dashboard from './pages/admin/Dashboard'
+import Messages from './pages/admin/Messages'
+import Projects from './pages/admin/Projects'
 import ComingSoon from './pages/admin/ComingSoon'
 
-const pages = ['profile', 'about', 'projects', 'skills', 'experience',
-  'certificates', 'education', 'messages', 'settings']
+const pending = ['profile', 'about', 'skills', 'experience', 'certificates', 'education', 'settings']
 
 export default function App() {
   return (
@@ -17,7 +18,9 @@ export default function App() {
         <Route element={<AdminLayout />}>
           <Route index element={<Navigate to="dashboard" replace />} />
           <Route path="dashboard" element={<Dashboard />} />
-          {pages.map((p) => <Route key={p} path={p} element={<ComingSoon title={p} />} />)}
+          <Route path="messages" element={<Messages />} />
+          <Route path="projects" element={<Projects />} />
+          {pending.map((p) => <Route key={p} path={p} element={<ComingSoon title={p} />} />)}
         </Route>
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
