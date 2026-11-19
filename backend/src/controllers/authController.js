@@ -7,7 +7,9 @@ const DUMMY_HASH = bcrypt.hashSync('dummy-password', 12);
 const cookieOpts = () => ({
   httpOnly: true,
   sameSite: 'lax',
-  secure: process.env.NODE_ENV === 'production',
+  secure: process.env.COOKIE_SECURE
+    ? process.env.COOKIE_SECURE === 'true'
+    : process.env.NODE_ENV === 'production',
   maxAge: 7 * 24 * 60 * 60 * 1000,
 });
 
