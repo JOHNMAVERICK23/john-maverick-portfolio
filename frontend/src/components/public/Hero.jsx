@@ -1,10 +1,13 @@
 import { Download, ExternalLink } from 'lucide-react'
+import { usePublic } from '../../context/PublicDataContext'
+import { visibleSections } from '../../utils/sections'
 
 const initials = (name) =>
   name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join('')
 
-export default function Hero({ profile, settings }) {
-  const sections = settings.sections || {}
+export default function Hero({ profile }) {
+  const { data } = usePublic()
+  const sections = visibleSections(data)
   const social = profile.social_links || []
 
   return (

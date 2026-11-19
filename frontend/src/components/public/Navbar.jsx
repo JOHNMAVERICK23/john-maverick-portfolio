@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Menu, X, Sun, Moon } from 'lucide-react'
+import { usePublic } from '../../context/PublicDataContext'
+import { visibleSections } from '../../utils/sections'
 
 const LINKS = [
   ['about', 'About'], ['skills', 'Skills'], ['projects', 'Projects'],
@@ -9,8 +11,9 @@ const LINKS = [
 
 export default function Navbar({ settings, profile, theme, onToggleTheme }) {
   const [open, setOpen] = useState(false)
-  const sections = settings.sections || {}
-  const links = LINKS.filter(([key]) => sections[key] !== false)
+  const { data } = usePublic()
+  const visible = visibleSections(data)
+  const links = LINKS.filter(([key]) => visible[key])
   const brand = settings.site_title || profile.full_name
 
   const linkCls = 'rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:text-brand-blue dark:text-slate-300 dark:hover:text-brand-sky'

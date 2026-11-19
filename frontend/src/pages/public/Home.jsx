@@ -3,6 +3,7 @@ import { PublicProvider, usePublic } from '../../context/PublicDataContext'
 import useTheme from '../../hooks/useTheme'
 import Navbar from '../../components/public/Navbar'
 import Hero from '../../components/public/Hero'
+import Sections from '../../components/public/Sections'
 import Footer from '../../components/public/Footer'
 
 const setMeta = (name, content) => {
@@ -57,6 +58,7 @@ function Site() {
       <Navbar settings={settings} profile={profile} theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <Hero profile={profile} settings={settings} />
+        <Sections data={data} />
       </main>
       <Footer profile={profile} settings={settings} />
     </>
