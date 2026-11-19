@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import ProtectedRoute from './routes/ProtectedRoute'
 import AdminLayout from './layouts/AdminLayout'
 import Login from './pages/admin/Login'
+import Home from './pages/public/Home'
 import Dashboard from './pages/admin/Dashboard'
 import Messages from './pages/admin/Messages'
 import Projects from './pages/admin/Projects'
@@ -17,7 +18,7 @@ import Settings from './pages/admin/Settings'
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<div className="p-8">Public site arrives in Phase 6.</div>} />
+      <Route path="/" element={<Home />} />
       <Route path="/admin/login" element={<Login />} />
       <Route path="/admin" element={<ProtectedRoute />}>
         <Route element={<AdminLayout />}>
