@@ -136,7 +136,3 @@ createdb portfolio_db
 gunzip -c backups/db-<timestamp>.sql.gz | psql portfolio_db
 tar -xzf backups/uploads-<timestamp>.tar.gz -C backend/uploads
 ~~~
-
-## Deployment
-
-See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
