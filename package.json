@@ -5,6 +5,7 @@
     "build": "npm --prefix frontend run build",
     "start": "NODE_ENV=production npm --prefix backend start",
     "dev:api": "npm --prefix backend run dev",
-    "dev:web": "npm --prefix frontend run dev"
+    "dev:web": "npm --prefix frontend run dev",
+    "backup": "npm --prefix backend run backup"
   }
 }

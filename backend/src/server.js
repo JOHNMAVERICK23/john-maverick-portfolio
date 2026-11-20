@@ -8,4 +8,8 @@ if (!secret || secret.length < 32 || secret === 'change_me') {
 
 const app = require('./app');
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`API running on http://localhost:${PORT}`));
+const HOST = process.env.HOST;
+const onReady = () => console.log(`API running on http://${HOST || 'localhost'}:${PORT}`);
+
+if (HOST) app.listen(PORT, HOST, onReady);
+else app.listen(PORT, onReady);

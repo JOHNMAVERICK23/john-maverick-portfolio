@@ -10,7 +10,8 @@
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
     "create-admin": "node src/db/createAdmin.js",
-    "smoke": "node scripts/smoke-test.js"
+    "smoke": "node scripts/smoke-test.js",
+    "backup": "bash scripts/backup.sh"
   },
   "keywords": [],
   "type": "commonjs",
