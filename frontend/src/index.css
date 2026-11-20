@@ -17,3 +17,8 @@ body { @apply bg-brand-gray text-slate-900 dark:bg-brand-darker dark:text-brand-
   .input { @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-sky/40 dark:border-white/15 dark:bg-brand-darker; }
   .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-blue px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-blue/90 focus:outline-none focus:ring-2 focus:ring-brand-sky disabled:opacity-60; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

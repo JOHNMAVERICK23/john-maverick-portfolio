@@ -37,10 +37,10 @@ exports.getSkills = async (req, res) => {
       'SELECT * FROM skills WHERE is_featured ORDER BY sort_order, id'));
   }
   res.json(await rows(`
-    SELECT c.id, c.name, COALESCE(json_agg(s ORDER BY s.sort_order, s.id)
+    SELECT COALESCE(c.id, 0) AS id, COALESCE(c.name, 'Other') AS name, COALESCE(json_agg(s ORDER BY s.sort_order, s.id)
       FILTER (WHERE s.id IS NOT NULL), '[]') AS skills
-    FROM skill_categories c LEFT JOIN skills s ON s.category_id = c.id
-    GROUP BY c.id ORDER BY c.sort_order, c.id`));
+    FROM skills s FULL JOIN skill_categories c ON s.category_id = c.id
+    GROUP BY c.id, c.name, c.sort_order ORDER BY c.sort_order NULLS LAST, c.id NULLS LAST`));
 };
 
 exports.getExperiences = async (req, res) => {
