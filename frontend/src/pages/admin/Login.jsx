@@ -41,9 +41,6 @@ export default function Login() {
         <form onSubmit={submit}
           className="space-y-5 rounded-2xl border border-slate-200 bg-white/90 p-8 shadow-xl backdrop-blur dark:border-white/10 dark:bg-brand-black/80">
           <div className="space-y-2 text-center">
-            <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-brand-blue to-brand-sky text-white shadow-lg shadow-brand-blue/30">
-              <ShieldCheck size={28} aria-hidden="true" />
-            </div>
             <h1 className="text-2xl font-bold">Welcome back</h1>
             <p className="text-sm text-slate-500 dark:text-slate-400">Sign in to manage your portfolio</p>
           </div>
@@ -93,11 +90,6 @@ export default function Login() {
             {busy ? 'Signing in…' : 'Sign in'}
           </button>
         </form>
-
-        <Link to="/"
-          className="mt-5 flex items-center justify-center gap-2 text-sm text-slate-500 transition hover:text-brand-blue dark:text-slate-400 dark:hover:text-brand-sky">
-          <ArrowLeft size={16} aria-hidden="true" /> Back to website
-        </Link>
       </div>
     </div>
   )

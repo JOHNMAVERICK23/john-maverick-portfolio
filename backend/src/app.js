@@ -17,7 +17,7 @@ app.use(helmet({
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 app.use(express.json({ limit: '1mb' }));
 app.use(cookieParser());
-app.use(rateLimit({ windowMs: 15 * 60 * 1000, limit: 300 }));
+app.use('/api', rateLimit({ windowMs: 15 * 60 * 1000, limit: 300 }));
 
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 app.use('/api', require('./routes'));
