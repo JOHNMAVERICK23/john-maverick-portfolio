@@ -1,5 +1,5 @@
 <p align="center">
-# John Maverick Portfolio CMS
+John Maverick Portfolio
 </p>
 A full-stack personal portfolio with an admin CMS. Every piece of public content (profile, projects, skills, experience, certificates, education, settings) is stored in PostgreSQL and edited through a protected dashboard, so changes appear on the public site right away.
 
